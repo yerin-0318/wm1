@@ -1,0 +1,75 @@
+08/08 23:02 JSONArray쓰기위해 json.jar추가함
+
+08/13 09:50 merge
+- 화면 구성 : 임시 (진범 상하단바)
+- 회원 가입, 수정(미완성), 탈퇴 (예지)
+- 로그인, 로그아웃 (준선)
+- 타포털사이트로 로그인 및 인증 (상원)
+- 커뮤니티 페이지 글쓰기/수정/삭제 및 프린트 (예린) 
+
+community/commumain.jsp
+08/08 19:44 : 생성
+08/09 20:20 : 회원, 스트리머 메일 비교 -> 글쓰기 / 수정 / 삭제 버튼 구현 (기능은 글쓰기만)
+08/10 11:00 : 수정구현
+08/10 17:08 : 좋아요 버튼 구현하기 -> ajax url:./goodplus
+08/10 18:40 : 좋아요 버튼 구현완료
+08/11 16:00 : 댓글 제작 -> ajax url:./infscrollServlet
+08/11 14:08 : ajax용 서블릿 통합 => CommunityAjaxServlet
+08/11 19:00 : 댓글 출력 완료
+08/11 22:00 : 댓글 더보기 출력완료 + 핀완료
+08/13 10:45 : 댓글 달기 + 더보기(출력개수/전체개수) ajax로 완료
+08/13 20:00 : 댓글 삭제 + 신고=> comm_repot.jsp : 신고 사유고르는 페이지연다.
+              communityDAO에 피신고인 정보 받아오는 함수 추가.
+
+community/commuwrite.jsp
+08/09 : 글작성 완료 -> DB저장
+
+community/commumodify.jsp
+08/10 11:30 : 글 내용, 첨부파일 불러오기
+
+net.community.action/listcomAction.java
+08/08 21:08 : 무한 스크롤 코딩 중
+08/09 14:24 : 출력완료(num으로 다음 글 출력하기 구현하자)
+08/09 15:55 : 모든 글 출력 완료
+
+net.community.action/CommunityFrontController.java
+08/08 20:30
+ import..action 수정완료
+ command.equals("/community/listcom.co") 작성
+ 
+net.community.action/deletecomAction.java
+08/10 13:55 : 게시글 삭제 구현 
+08/10 14:40 : DB에서 제거 + 파일 폴더에서 삭제
+
+net.community.action/modifycomAction.java
+08/10 16:50 : 게시글 수정 + 파일 첨부 여부에 따른 업데이트 오나료
+ 
+net.community.action/writecomAction.java
+08/09 11:07 : 사진 업로드 구현
+
+
+net.community.bean/communityDAO
+08/08 21:08 : getListSize 구현
+08/08 23:10 : getList 구현 : JSON오브젝트로 받아옴
+08/09 11:07 : insertcontent 구현
+08/11 16:00 : getcomments 구현
+
+08/09 20:20 : WebContent/streamerhome.jsp : 스트리머 페이지(음악/커뮤니티)
+=>musics/musicsmain.jsp , community/commumain.jsp로 연동
+
+
+------------------------------------------------------------------
+
+net.community.action/selectcontServlet.java
+08/10 15:10 : 게시글 수정을 위한 Ajax로 데이터 받아오는 서블릿 (완성)
+08/11 14:08 : ajax용 서블릿으로 통합 => CommunityAjaxServlet
+
+net.community.action/goodplusServlet.java
+08/10 18:40 : 이미 좋아요 했는지/안했는지 판정 후 값반환 완료. 좋아요 안했으면 goodlist에 추가하고 해당 글 DB에도 업데이트
+08/11 14:08 : ajax용 서블릿으로 통합 => CommunityAjaxServlet
+
+net.community.action/infscrollServlet.java
+08/09 00:25 : 테스트용 서블릿
+08/09 14:24 : json객체로 전달 완료
+08/11 14:08 : ajax용 서블릿으로 통합 => CommunityAjaxServlet
+

@@ -1,0 +1,156 @@
+DB 모든 테이블의 Bean, DAO를 만들어 놨지만 굳이 안써도 됨!!!!!!!!!!!!!!!!!!!!!!!
+본인이 프로그래밍하는 방식으로 작성하시면 됩니다.
+(나중에 안쓰인 테이블은 제거할 예정)
+
+
+
+[회원]
+**net.member.action
+/joinmemberAction : 회원가입
+/loginAction : 로그인
+/logoutAction : 로그아웃
+/deletememberAction : 회원탈퇴
+/modifymemberAction : 회원정보 수정
+/levelupAction : 스트리머 신청
+/followerAction : 팔로워 목록 얻기
+
+**net.member.db
+/followBean : 팔로워
+/userlikeBean : 선호하는 장르
+/membersBean : 회원정보
+
+
+[차단]
+**net.ben.action
+/startbenAction : 벤하기
+/endbenAction : 벤해제
+/getbenAction : 벤목록 불러오기
+
+**net.ben.db
+/ben_emailBean : 차단한 아이디
+
+
+[포인트 관련]
+포인트 충전 / 후원하기
+**net.point.action
+/getPointAction : 포인트 충전하기
+/setPointAction : 포인트 내역 보기
+/sendPointAction : 후원하기
+/getSponsorAction : 후원 내역 보기
+
+**net.point.db
+/sponsorBean : 후원내역
+/chargeBean : 포인트 충전내역
+
+
+[플레이리스트]
+**net.playlist.action
+/playAction : 플레이 리스트의 특정 곡 재생하기
+/getPlaylistAction : 플레이리스트 전체 얻기
+/delPlaylistAction : 플레이리스트에서 특정 곡 지우기
+
+**net.playlist.db
+/playlistBean : 플레이리스트
+
+
+[메세지 주고 받기(DM)]
+**net.directmsg.action
+/directmsgPrtAction : 인스타 DM처럼 특정인과 대화창 보여주기
+/directmsgSend : 메세지 보내기
+/directmsgList : DM온 전체 목록
+
+**net.directmsg.db
+/messageBean 다이렉트 메세지
+
+[메뉴]
+net.chart.action : 차트 순 출력
+net.newupdate.action : 신곡 출력
+net.genre.action : 장르별 출력
+
+
+[작성한 글]
+내가 쓴 댓글 / 글을 보여줌
+해당 페이지에서 삭제도 가능하다(수정X)
+
+**net.writelist.action
+/commentDelAction : 댓글 삭제
+/freeboardDelAction : 게시판 글 삭제
+/commentlistAction : 내가 쓴 댓글 전체 보여줌(목록)
+/freeboardlistAction : 내가 자유게시판에 쓴 글 보여줌
+
+**net.writelist.db
+/com_commuBean 커뮤니티 댓글
+/com_musicBean 음악 댓글
+
+
+[관리]
+신고관리, 회원관리(정보보기/강퇴)
+**net.manage.action
+/warninglistAction : 신고 목록 보기
+/warningDelAction : 신고 삭제
+/showmemberAction : 전체 멤버정보 보기
+/kickbackAction : 강퇴하기
+
+**net.manage.db
+/warningBean : 스트리머가 신고한 경고내역
+
+[게시판]
+comment_DelAction : 댓글삭제
+comment_ModAction : 댓글수정
+comment_WrtAction : 댓글작성
+delete_ Action : 글삭제
+modify_Action : 글수정
+write_Action : 글작성
+
+1. (스트리머)음악 올리기 .. 작성/수정/삭제/댓글
+**net.musics.action
+**net.musics.db/musicsBean 업로드된 음악
+
+2. (스트리머)커뮤니티 글올리기 .. 작성/수정/삭제/댓글
+**net.community.action
+**net.community.db/communityBean 커뮤니티
+
+3. (회원)자유게시판 글올리기 .. 작성/수정/삭제
+**net.freeboard.action
+**net.freeboard.db/free_boardBean 자유게시판
+
+
+[스트리머 (개인) 음악 페이지]
+**net.streamerhome.action
+/getStreamerAction : 스트리머 정보 얻기
+/getMusicsAtcion : 올린 음악 정보 얻어서 출력
+/get
+**net.streamer.db
+/streamerBean : 스트리머 정보
+
+
+[스트리머]
+**net.streamer.action
+/getPaid_strAction : 유료 스트리머 정보 얻기
+/reportAction : 신고하기
+
+**net.streamer.db
+/paid_streamerBean : 유료 스트리머
+/reasonBean : 신고사유
+
+
+
+--------
+
+WebContent
+chart : 차트순 출력
+community : 스트리머별 커뮤니티
+freeboard : 자유게시판
+genre : 장르 별 출력
+manage : 관리자 페이지
+member : 회원관련
+musics : 스트리머별 음악 페이지
+mypage : 회원 개인 페이지
+newupdate : 신곡순 출력
+
+
+jsp / html 분류해서 저장하기
+어디 쓸지 모르겠으면 조원이랑 상의하기 <--**중요!**
+
+
+

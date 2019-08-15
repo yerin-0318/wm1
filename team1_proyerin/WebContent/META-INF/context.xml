@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<Resource 
+		name="jdbc/watermelon"
+		auth="Container"
+		type="javax.sql.DataSource"
+		driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://localhost:3306/watermelon"
+		username="team1"
+		password="team1pass"		
+	/>
+
+
+</Context>
+<!--mysql연동  
+19/08/08 9:24 손예린
+
+-->
